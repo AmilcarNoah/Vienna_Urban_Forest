@@ -300,7 +300,7 @@ svg.call(t);
 // Create Legend to symbolize elements
 
 var totalLegendWidth = 300;
-var totalLegendHeight = 540; // Adjusted height to fit both legends
+var totalLegendHeight = 590; // Adjusted height to fit both legends
 
 // Create the SVG container for the legend
 var legend = d3.select("#legend")
@@ -412,8 +412,33 @@ legend.selectAll(".t_height-circle-legend-labels")
   .attr("font-style", "italic")
   .style("alignment-baseline", "middle");
 
+  //////////////////// Streets Legend ///////////////////////
+legend.append("text")
+.attr("x", paddingX)
+.attr("y", t_height_OffsetY + 385)  // Position of Title fo streets
+.text("Streets")
+.attr("font-size", "16px")
+.attr("font-weight", "bold")
+.style("fill", "black");
 
+// Line symbol 
+legend.append("line")
+.attr("x1", paddingX + 20)  // Positioning the line symbol in the legend
+.attr("y1", t_height_OffsetY + 395)  // Positioning it below the label
+.attr("x2", paddingX + 55)  // Length of the line symbol
+.attr("y2", t_height_OffsetY + 395)  
+.style("stroke", "rgb(112,128,144)") 
+.style("stroke-width", 2);
 
+// Label for Streets
+legend.append("text")
+.attr("x", paddingX + 60)  // Positioning text to the right of the line symbol
+.attr("y", t_height_OffsetY + 395)
+.style("fill", "black")
+.text("Streets")
+.attr("font-size", "14px")
+.attr("font-style", "italic")
+.style("alignment-baseline", "middle");
 
 
 
